@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .cv-section {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-4;
+  }
+  
+  .cv-section-title {
+    @apply text-lg font-semibold text-gray-900 mb-4 flex items-center justify-between;
+  }
+  
+  .edit-btn {
+    @apply text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors text-sm font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors text-sm font-medium;
+  }
+  
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 border border-gray-200;
+  }
+  
+  .photo-upload-area {
+    @apply w-32 h-32 rounded-full bg-gray-100 border-4 border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-400 transition-colors;
+  }
+  
+  .photo-upload-area:hover {
+    @apply bg-gray-200 border-gray-400;
+  }
+  
+  .photo-preview {
+    @apply w-32 h-32 rounded-full object-cover border-4 border-gray-200;
+  }
+}
+
+/* PDF-specific styles - works for both @media print and html2pdf.js */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .cv-container {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
